@@ -21,8 +21,8 @@
             <div class="nav-wrapper cor-principal">
                 <a href="#" class="brand-logo">Logo</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Login</a></li>
-                    <li><a href="badges.html">Sign Up</a></li>
+                    <li><p:commandLink action="#{linksUtilBean.loginPage()}" value="Login"/></li>
+                    <li><p:commandLink action="#{linksUtilBean.singUpPage()}" value="Sing Up"/></li>
                 </ul>
             </div>
         </nav>
@@ -36,7 +36,7 @@
             <div class="container">
                 <div class="col s12 m3">
                     <div class="input-field col s12">
-                        <h:selectOneMenu id="console" value="">
+                        <h:selectOneMenu id="console1" value="">
                             <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
                             <f:selectItem itemLabel="PS4" itemValue="PS4" />
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col s12 m3">
                     <div class="input-field col s12">
-                        <h:selectOneMenu id="console" value="">
+                        <h:selectOneMenu id="console2" value="">
                             <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
                             <f:selectItem itemLabel="PS4" itemValue="PS4" />
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col s12 m3">
                     <div class="input-field col s12">
-                        <h:selectOneMenu id="console" value="">
+                        <h:selectOneMenu id="console3" value="">
                             <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
                             <f:selectItem itemLabel="PS4" itemValue="PS4" />
