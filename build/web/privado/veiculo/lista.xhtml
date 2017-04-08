@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="content">
+        <h:form id="form-onibus-list" class="card">
+                
+            <div class="mdl-grid">
+                <!-- Colored FAB button with ripple -->
+                <h:commandLink class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored cor-secundaria" 
+                               action="#{linkUtilBean.novoVeiculo()}">
+                    <i class="material-icons">add</i>
+                </h:commandLink>
+                
+                <h:dataTable value="#{onibusBean.onibusList}" var="item" class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+
+                    <h:column class="mdl-data-table__cell--non-numeric">
+                        <f:facet name="header">
+                            <h:outputText value="Numero"/>
+                        </f:facet>
+                        <h:outputText value="#{item.numero}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Modelo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.modelo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Marca"/>
+                        </f:facet>
+                        <h:outputText value="#{item.marca}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Ano"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ano}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Chassi"/>
+                        </f:facet>
+                        <h:outputText value="#{item.chassi}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Placa"/>
+                        </f:facet>
+                        <h:outputText value="#{item.placa}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

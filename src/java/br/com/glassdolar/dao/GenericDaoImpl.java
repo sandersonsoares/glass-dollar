@@ -32,9 +32,11 @@ public class GenericDaoImpl<T> implements IGenericDao<T> {
     public T save(T t) throws DAOException {
         EntityManager manager = PersistenceUtil.getEntityManager();
         try {
+            manager.getTransaction().begin();
             manager.persist(t);
             manager.flush();
             manager.refresh(t);
+            manager.getTransaction().commit();
             return t;
         } catch (Exception e) {
             e.printStackTrace();

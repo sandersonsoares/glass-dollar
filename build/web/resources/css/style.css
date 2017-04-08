@@ -1,0 +1,41 @@
+
+.card-login {
+    align-items: center;
+    justify-content: center;
+}
+.card-login-content {
+    padding: 24px;
+    flex: none;
+}
+
+.h-logo{
+    margin-top:45px;
+    margin-bottom:25px;
+    margin-left: 15px;
+    width: 125px;
+}
+
+.card{
+    margin: 20px;
+    padding: 30px;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
+    -moz-box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
+    box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
+}
+
+.card-index{
+    height: 200px;
+}
+
+.cor-principal{
+    background: #2A3233 !important;
+}
+
+.cor-secundaria{
+    background: #4ECDC4 !important;
+}
+
+.width100 {
+    width: 100% !important;
+}
