@@ -36,13 +36,16 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
-        String loginURL = request.getContextPath() + "/faces/index.xhtml";
+        String indexURL = request.getContextPath() + "/faces/index.xhtml";
+        String loginURL = request.getContextPath() + "/faces/login.xhtml";
 
         HttpSession session = request.getSession();
         Perfil perfil = (Perfil) session.getAttribute("user");
         
-        boolean loginRequest = request.getRequestURI().startsWith(loginURL);
-        boolean resourceRequest = request.getRequestURI().startsWith(request.getContextPath() + "/faces/resources/");
+        boolean loginRequest = request.getRequestURI().startsWith(indexURL) || request.getRequestURI().startsWith(loginURL);
+        boolean resourceRequest = 
+                request.getRequestURI().startsWith(request.getContextPath() + "/faces/resources/")
+                || request.getRequestURI().startsWith(request.getContextPath() + "/faces" + ResourceHandler.RESOURCE_IDENTIFIER);
         
         if (perfil != null || loginRequest || resourceRequest) {
             chain.doFilter(request, response);
