@@ -1,7 +1,15 @@
 
+.center-card {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
 .card-login {
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto;
+    width: 50%; /* Altere para o valor da largura desejada. */
 }
 .card-login-content {
     padding: 24px;
@@ -26,6 +34,7 @@
 
 .card-index{
     height: 200px;
+    width: 100px;
 }
 
 .cor-principal{
@@ -38,4 +47,8 @@
 
 .width100 {
     width: 100% !important;
+}
+
+.icon-awesome {
+    margin-right: 10px;
 }
