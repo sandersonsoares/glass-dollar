@@ -5,44 +5,65 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="/WEB-INF/templates/template.xhtml">
 
+
     <ui:define name="content">
+
+        <ui:include src="../WEB-INF/templates/searchBar.xhtml"/>
+
         <div class="row">
             <div class="container">
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <h:selectOneMenu id="console1" value="">
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                        </h:selectOneMenu>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <h:selectOneMenu id="console2" value="">
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                        </h:selectOneMenu>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <h:selectOneMenu id="console3" value="">
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                        </h:selectOneMenu>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <p:commandLink class="waves-effect waves-light btn-large width100 cor-secundaria">
-                            <i class="material-icons">search</i>
-                        </p:commandLink>
+                <div class="z-depth-4">
+                    <div class="card-content">
+                        <ul class="collection">
+                            <li class="collection-item avatar">
+                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
+                                <span class="title">Title</span>
+                                <p>First Line <br/>
+                                    Second Line
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                            <li class="collection-item avatar">
+                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
+                                <span class="title">Title</span>
+                                <p>First Line <br/>
+                                    Second Line
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                            <li class="collection-item avatar">
+                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
+                                <span class="title">Title</span>
+                                <p>First Line <br/>
+                                    Second Line
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                            <li class="collection-item avatar">
+                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
+                                <span class="title">Title</span>
+                                <p>First Line <br/>
+                                    Second Line
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                            <li class="collection-item avatar">
+                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
+                                <span class="title">Title</span>
+                                <p>First Line <br/>
+                                    Second Line
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                            <li class="collection-item avatar">
+                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
+                                <span class="title">Title</span>
+                                <p>First Line <br/>
+                                    Second Line
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
