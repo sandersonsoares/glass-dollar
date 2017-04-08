@@ -24,6 +24,10 @@
     box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
 }
 
+.card-index{
+    height: 200px;
+}
+
 .cor-principal{
     background: #2A3233 !important;
 }
