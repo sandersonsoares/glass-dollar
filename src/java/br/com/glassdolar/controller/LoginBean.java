@@ -47,4 +47,10 @@ public class LoginBean {
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", perfil);
         return "/privado/principal.xhtml?faces-redirect=true";
     }
+    
+    public String logout(){
+        Perfil perfil = new Perfil();
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("user");
+        return "/privado/principal.xhtml?faces-redirect=true";
+    }
 }
