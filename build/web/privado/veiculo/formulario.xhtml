@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="content">
+        <h:form id="form-onibus">
+            <div class="card">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100% !important">
+                            <h:outputLabel class="mdl-textfield__label" value="Número" for="num" />
+                            <h:inputText  class="mdl-textfield__input" id="num" value="#{onibusBean.onibus.numero}" />
+
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100% !important">
+                            <h:outputLabel class="mdl-textfield__label" value="Marca" for="marca" />
+                            <h:inputText class="mdl-textfield__input" id="marca" value="#{onibusBean.onibus.marca}" />
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100% !important">
+                            <h:outputLabel class="mdl-textfield__label" value="Modelo" for="modelo" />
+                            <h:inputText class="mdl-textfield__input" id="modelo" value="#{onibusBean.onibus.modelo}"/>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100% !important">
+                            <h:outputLabel class="mdl-textfield__label" value="Ano" for="ano" />
+                            <h:inputText class="mdl-textfield__input" id="ano" value="#{onibusBean.onibus.ano}" required="true" requiredMessage="Campo está vazio">
+                                <f:convertNumber integerOnly="true" minIntegerDigits="1"  type="number"/>
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100% !important">
+                            <h:outputLabel class="mdl-textfield__label" value="Chassi" for="chassi" />
+                            <h:inputText class="mdl-textfield__input" id="chassi" value="#{onibusBean.onibus.chassi}">
+                                <f:convertNumber integerOnly="true" minIntegerDigits="1"  type="number"/>
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100% !important">
+                            <h:outputLabel class="mdl-textfield__label" value="Placa" for="placa" />
+                            <h:inputText class="mdl-textfield__input" id="placa" value="#{onibusBean.onibus.placa}"/>
+                        </div>
+                    </div>
+
+
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <!-- Colored FAB button with ripple -->
+                        <h:commandLink class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored cor-secundaria" 
+                                       actionListener="#{onibusBean.salvar()}" >
+                            <i class="material-icons">check</i>
+                        </h:commandLink>
+                        <h:commandLink class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red-400" 
+                                       action="#{linkUtilBean.listaVeiculos()}" 
+                                       style="float: right">
+                            <i class="material-icons">close</i>
+                        </h:commandLink>
+                    </div>
+
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
