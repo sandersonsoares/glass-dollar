@@ -1,45 +1,68 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Glass Dolar</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/> 
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-light_blue.min.css" /> 
-        <link rel="stylesheet" href="resources/css/style.css" />
-        <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    </h:head>
-    <h:body>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/templates/template.xhtml">
 
-        <div class="mdl-layout mdl-js-layout mdl-color--grey-100 card-login">
-            <main class="mdl-layout__content card-login-content">
-                <div class="mdl-card mdl-shadow--6dp">
-                    <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                        <h2 class="mdl-card__title-text">Login</h2>
+    <ui:define name="content">
+
+        <div class="row center-card">
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-title">Login</p>
+
+                    <div class="card-action">
+                        <div class="row">
+                            <p:commandLink class="waves-effect waves-light btn width100 blue">
+                                <i class="fa fa-twitter icon-awesome" aria-hidden="true"></i>
+                                Login with Twitter
+                            </p:commandLink> 
+                        </div>
+                        <div class="row">
+                            <p:commandLink  class="waves-effect waves-light btn width100 blue darken-4 ">
+                                <i class="fa fa-linkedin icon-awesome" aria-hidden="true"></i>
+                                Login with Linkedin
+                            </p:commandLink>
+                        </div>
                     </div>
-                    <h:form>
-                        <div class="mdl-card__supporting-text">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="username" />
-                                <label class="mdl-textfield__label" for="username">Login</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="password" id="userpass" />
-                                <label class="mdl-textfield__label" for="userpass">Senha a</label>
-                            </div>
+                    <p class="center grey-text">or</p>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p:inputText id="login" class="validate"/>
+                            <p:outputLabel for="login">Login</p:outputLabel>
                         </div>
-                        <div class="mdl-card__actions mdl-card--border">
+                        <div class="input-field col s12">
+                            <p:password id="password" class="validate"/>
+                            <p:outputLabel for="password">Password</p:outputLabel>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="left">
+                            <h:selectBooleanCheckbox id="remember" value=""></h:selectBooleanCheckbox>
+                            <p:outputLabel for="remember">Remember-me</p:outputLabel>
+                        </p>
+                        <p class="right"><p:commandLink value="Forgot password"/></p>
+                    </div>
 
-                            <h:commandButton action="#{loginBean.login()}"
-                                             class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                                             value="Entrar" />
-                        </div>
-                    </h:form>
+
                 </div>
-            </main>
+                <div class="card-action">
+                    <p:commandLink value="Login" class="waves-effect waves-light btn width100" action="#{linkUtilBean.login()}"/>
+                </div>
+                
+                <div class="card-action " style="margin-bottom: 10px">
+                    <!--<div class="row">-->
+                        <p class="left">Don't have an account?</p>
+                        <p:commandLink value="Sign Up" class="waves-effect waves-light btn right cor-principal" action="#{linkUtilBean.login()}"/>
+                    <!--</div>-->
+                </div>
+            </div>
         </div>
-    </h:body>
-</html>
+
+    </ui:define>
+
+    <ui:define name="footer"/>
+
+</ui:composition>
+
