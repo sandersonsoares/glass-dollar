@@ -42,14 +42,9 @@ public class LoginFilter implements Filter {
         Perfil perfil = (Perfil) session.getAttribute("user");
         
         boolean loginRequest = request.getRequestURI().startsWith(loginURL);
-        boolean resourceRequest = request.getRequestURI().startsWith(request.getContextPath() + "/faces" + ResourceHandler.RESOURCE_IDENTIFIER);
-
+        boolean resourceRequest = request.getRequestURI().startsWith(request.getContextPath() + "/faces/resources/");
+        
         if (perfil != null || loginRequest || resourceRequest) {
-            if (!resourceRequest) { // Prevent restricted pages from being cached.
-                response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-                response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-                response.setDateHeader("Expires", 0); // Proxies.
-            }
             chain.doFilter(request, response);
         }else {
             response.sendRedirect(loginURL);
