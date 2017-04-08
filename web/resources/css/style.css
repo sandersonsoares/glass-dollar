@@ -1,4 +1,7 @@
 
+body, *{
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+}
 
 .center-card {
     position:absolute;
