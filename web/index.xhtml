@@ -7,113 +7,135 @@
 
     <ui:define name="content">
         <div class="parallax-container">
+            <div class="container">
+                <div class="col s12 m12 text-index">
+                    <h1 class="white-text">Glass Dollar</h1>
+                    <h4 class="text-400 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius commodo felis consectetur molestie. Sed pharetra dui ut libero bibendum eleifend. Maecenas lectus sapien, efficitur ut tempor vitae</h4>
+                </div>
+            </div>
             <div class="parallax"><h:graphicImage library="img" name="bg-index.jpg"/></div>
         </div>
+        
+        <ui:include src="WEB-INF/templates/searchBar.xhtml"/>
 
         <div class="row">
             <div class="container">
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <h:selectOneMenu id="console1">
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                        </h:selectOneMenu>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <h:selectOneMenu id="console2">
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                        </h:selectOneMenu>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <h:selectOneMenu id="console3">
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                        </h:selectOneMenu>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="input-field col s12">
-                        <p:commandLink class="waves-effect waves-light btn-large width100 cor-secundaria" action="#{linksUtilBean.investorsPage()}">
-                            <i class="material-icons">search</i>
-                        </p:commandLink>
-                    </div>
-                </div>
+                <h2>Select Areas</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="container">
-                <div class="col s12 m12">
-                    <h5 class="left-align">Select Areas</h5>
+                <!--<ui:repeat value="5" var="investor" size="4">-->
+
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
                 </div>
 
-                <div class="row">
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                </div>
+                <!--</ui:repeat>-->
             </div>
         </div>
 
         <div class="row">
             <div class="container">
-                <div class="col s12 m12">
-                    <h5 class="left-align">Select Industries</h5>
+                <h2>Select Industries</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <!--<ui:repeat value="5" var="investor" size="4">-->
+
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image img-normal waves-effect waves-block waves-light">
+                            <img class="img-normal" src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" />
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Area Um</span>
+                            <p><a href="#">show more</a></p>
+                        </div>
+                    </div>  
                 </div>
 
-                <div class="row">
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                    <div class="col s6 m3">
-                        <div class="card-areas">
-                            <img src="https://media.ceetiz.com/page/destination/4/additionalInfoBlock/block-1/thumbnails/306x360/Londres.jpg" />
-                        </div>
-                    </div>
-                </div>
+                <!--</ui:repeat>-->
             </div>
         </div>
     </ui:define>
-    
+
 </ui:composition>
 

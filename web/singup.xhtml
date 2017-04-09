@@ -6,54 +6,68 @@
                 template="/WEB-INF/templates/template.xhtml">
 
     <ui:define name="content">
-        
-        <div class="row center-card" style="margin-top: 35px;">
-            <div class="card">
-                <h:form>
-                    <div class="card-content">
-                        <p class="card-title">Create account</p>
-                        
+
+        <div class="row">
+            <div class="col s12 m4 offset-m4 login-card">
+                <div class="card">
+                    <h:form>
+                        <p:growl id="growl" showDetail="true" sticky="true" />  
+
+                        <div class="card-content">
+                            <p class="card-title">Create account</p>
+
+                            <div class="card-action">
+                                <div class="row center">
+                                    Sing up to join glassdollar and  read reviews of founders about their investors
+                                </div>
+                                <div class="row">
+                                    <a href="#" class="waves-effect waves-light btn width100 blue">
+                                        <i class="fa fa-twitter icon-awesome" aria-hidden="true"></i>
+                                        Sign Up with Twitter
+                                    </a> 
+                                </div>
+                                <div class="row">
+                                    <a href="#" class="waves-effect waves-light btn width100 blue darken-4 ">
+                                        <i class="fa fa-linkedin icon-awesome" aria-hidden="true"></i>
+                                        Sign Up with Linkedin
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="center grey-text">or</p>
+
+                            <p:messages id="msgs" autoUpdate="true" closable="true"/>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <p:inputText id="email" value="#{singInBean.email}" required="true" requiredMessage="E-mail is required!" validatorMessage="Insert a valid e-mail.">
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                    </p:inputText>
+                                    <p:outputLabel value="E-mail address" for="email"/>
+                                </div>
+                                <div class="input-field col s12">
+                                    <p:password id="password" value="#{singInBean.password}" required="true" requiredMessage="Password is required!"/>
+                                    <p:outputLabel value="Password" for="password"/>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-action">
-                            <div class="row">
-                                <center>
-                                    <div style="max-width: 300px;">
-                                        Sing up to join glassdollar and  read reviews of founders about their investors
-                                    </div>
-                                </center>
-                            </div>
-                            <div class="row">
-                                <center>
-                                    <a style="cursor: pointer;">Sing up with Linkedin or Twitter</a>
-                                </center>
-                            </div>
+                            <p:commandLink value="Sing Up" class="waves-effect waves-light btn width100" action="#{singInBean.singIn()}"/>
                         </div>
-                        <p class="center grey-text">or</p>
-
-                        <p:messages id="msgs" autoUpdate="true" closable="true"/>
-
+                    </h:form>   
+                    <div class="card-action " style="margin-bottom: 10px">
                         <div class="row">
-                            <div class="input-field col s12">
-                                <p:inputText id="email" value="#{singInBean.email}" required="true" requiredMessage="E-mail is required!" validatorMessage="Insert a valid e-mail.">
-                                    <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                                </p:inputText>
-                                <p:outputLabel value="E-mail address" for="email"/>
-                            </div>
-                            <div class="input-field col s12">
-                                <p:password id="password" value="#{singInBean.password}" required="true" requiredMessage="Password is required!"/>
-                                <p:outputLabel value="Password" for="password"/>
-                            </div>
+                            <p class="left">Already have a GlassDollar account?</p>
+                            <h:form>
+                                <p:commandLink value="Login" class="waves-effect waves-light btn right cor-principal" action="#{linksUtilBean.loginPage()}"/>
+                            </h:form>
                         </div>
-                        
                     </div>
-                    <div class="card-action">
-                        <p:commandLink value="Sing Up" class="waves-effect waves-light btn width100" action="#{singInBean.singIn()}"/>
-                    </div>
-                </h:form>
+
+                </div>
             </div>
+
         </div>
-        <div style="min-height: 640px;">
-            
-        </div>
+
     </ui:define>
 
 </ui:composition>

@@ -39,6 +39,7 @@
                                 <f:selectItem itemLabel="Proptech" itemValue="Proptech" />
                                 <f:selectItem itemLabel="Marketplaces" itemValue="Marketplaces" />
                                 <f:selectItem itemLabel="E-Commerce" itemValue="E-Commerce" />
+                            </h:selectOneMenu>
                                 </h:selectOneMenu>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
                         </div>
 
                         <div class="input-field col s12 m2">
-                            <p:commandLink class="btn btn-floating btn-large pulse">
+                            <p:commandLink action="#{linksUtilBean.investorsPage()}" class="btn btn-floating btn-large pulse">
                                 <i class="material-icons">search</i>
                             </p:commandLink>
                         </div>

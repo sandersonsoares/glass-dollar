@@ -7,7 +7,7 @@
 
     <ui:define name="content">
 
-        <div class="row" style="margin-top: 60px;">
+        <div class="row">
             <div class="col s12 m4 offset-m4 login-card">
                 <div class="card">
                     <h:form>
@@ -59,18 +59,15 @@
                         </div>
                     </h:form>   
                     <div class="card-action " style="margin-bottom: 10px">
-                        <!--<div class="row">-->
-                        <p class="left">Don't have an account?</p>
-                        <h:form>
-                            <p:commandLink value="Sign Up" class="waves-effect waves-light btn right cor-principal" action="#{linksUtilBean.singUpPage()}"/>
-                        </h:form>
-                        <!--</div>-->
+                        <div class="row">
+                            <p class="left">Don't have an account?</p>
+                            <h:form>
+                                <p:commandLink value="Sign Up" class="waves-effect waves-light btn right cor-principal" action="#{linksUtilBean.singUpPage()}"/>
+                            </h:form>
+                        </div>
                     </div>
 
                 </div>
-            </div>
-
-            <div style="min-height: 720px;">
             </div>
 
         </div>

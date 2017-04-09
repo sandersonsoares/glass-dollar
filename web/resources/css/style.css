@@ -25,11 +25,15 @@ p {
 }
 
 .text-700{
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .text-400{
-    font-weight: 900;
+    font-weight: 400;
+}
+
+.text-index{
+    margin-top: 200px;
 }
 
 
@@ -42,15 +46,6 @@ p {
     margin-bottom:25px;
     margin-left: 15px;
     width: 125px;
-}
-
-.card{
-    margin: 20px;
-    padding: 30px;
-    background: #fff;
-    -webkit-box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
-    -moz-box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
-    box-shadow: 1px 1px 17px 0px rgba(125,125,125,0.46);
 }
 
 .card-index{
@@ -155,6 +150,10 @@ p {
 
 .card .card-image img{
     border-radius: 50% !important;
+}
+
+.card .card-image img{
+    border-radius: 0px !important;
 }
 
 
