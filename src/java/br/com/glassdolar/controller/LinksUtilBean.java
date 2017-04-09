@@ -17,27 +17,31 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class LinksUtilBean implements Serializable {
-    
+
     public static final String FACES_REDIRECT = "?faces-redirect=true";
-    
+
     @PostConstruct
-    public void init(){
-        
+    public void init() {
+
     }
-    
-    public String loginPage(){
-        return "/faces/login.xhtml"+FACES_REDIRECT;
+
+    public String loginPage() {
+        return "/faces/login.xhtml" + FACES_REDIRECT;
     }
-    
-    public String singUpPage(){
-        return "/faces/singup.xhtml"+FACES_REDIRECT;
+
+    public String singUpPage() {
+        return "/faces/singup.xhtml" + FACES_REDIRECT;
     }
-    
-    public String investorsPage(){
-        return "/faces/public/investors.xhtml"+FACES_REDIRECT;
+
+    public String investorsPage() {
+        return "/faces/public/investors.xhtml" + FACES_REDIRECT;
     }
-    
-     public String indexPage(){
-        return "/faces/index.xhtml"+FACES_REDIRECT;
+
+    public String indexPage() {
+        return "/faces/index.xhtml" + FACES_REDIRECT;
+    }
+
+    public String investorPage() {
+        return "/faces/public/investor.xhtml" + FACES_REDIRECT;
     }
 }
