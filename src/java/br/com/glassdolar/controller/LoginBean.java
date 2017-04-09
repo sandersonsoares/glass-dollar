@@ -5,7 +5,11 @@
  */
 package br.com.glassdolar.controller;
 
+import br.com.glassdolar.exception.DAOException;
+import br.com.glassdolar.facade.Facade;
 import br.com.glassdolar.model.Usuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -22,9 +26,11 @@ public class LoginBean {
     
     private String login;
     private String senha;
+    private Facade facade;
     
     @PostConstruct
     public void init(){
+        facade = new Facade();
     }
 
     public String getLogin() {
@@ -44,14 +50,17 @@ public class LoginBean {
     }
     
     public String enter(){
-        if (login != null && senha != null && login.equals("admin") && senha.equals("admin")) {
-            Usuario perfil = new Usuario();
-            perfil.setLogin("admin");
-            perfil.setSenha("admin123");
-            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", perfil);
-            return "/faces/private/home.xhtml"+LinksUtilBean.FACES_REDIRECT;
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong login or password!", "Wrong login or password!"));
+        try {
+            Usuario user = facade.getUserByEmailAndPassword(login, senha);
+            if (user != null) {
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", user);
+                return "/faces/private/home.xhtml" + LinksUtilBean.FACES_REDIRECT;
+            } else {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong login or password!", "Wrong login or password!"));
+                return "";
+            }
+        } catch (DAOException ex) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Intern process error, contact admin system.", "Intern process error, contact admin system."));
             return "";
         }
     }

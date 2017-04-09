@@ -96,4 +96,8 @@ public class Facade implements Serializable {
         return selected;
     }
      
+     public Usuario getUserByEmailAndPassword(String email, String password) throws DAOException {
+         return usuarioDao.getUserByEmailAndPassword(email, password);
+     }
+     
 }
