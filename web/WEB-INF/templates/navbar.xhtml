@@ -6,14 +6,19 @@
     <nav>
         <div class="nav-wrapper cor-principal">
             <a href="#" class="brand-logo">GlassDollar</a>
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <h:form>
-                    <li><p:commandLink value="Login" ajax="false" action="#{linksUtilBean.loginPage()}"/></li>
-                    <li><p:commandLink value="Sign Up" action="#{linksUtilBean.singUpPage()}"/></li>
+                    <li><p:commandLink value="Login" ajax="false" action="#{linksUtilBean.loginPage()}" rendered="#{!loginBean.isLoged}"/></li>
+                    <li><p:commandLink value="Sign Up" action="#{linksUtilBean.singUpPage()}" rendered="#{!loginBean.isLoged}"/></li>
+                    <li><p:commandLink action="#{loginBean.logout()}" rendered="#{loginBean.isLoged}"><i class="material-icons">exit_to_app</i></p:commandLink></li>
                 </h:form>
             </ul>
         </div>
+
     </nav>
+
+
 
 </ui:composition>
 

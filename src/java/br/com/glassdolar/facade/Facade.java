@@ -10,6 +10,8 @@ import br.com.glassdolar.model.Usuario;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Facade implements Serializable {
@@ -43,12 +45,15 @@ public class Facade implements Serializable {
         }
     }
     
-    public void saveUser(Usuario usuario){
+    public void saveUser(Usuario usuario) throws DAOException {
         try{
+            if (usuarioDao.getUserByEmail(usuario.getLogin()) != null)
+                throw new DAOException("This email is already in use.");
             this.usuarioDao.save(usuario);
         } catch(DAOException e){
             System.out.println("SAVE USER ERROR");
             e.printStackTrace();
+            throw e;
         }
     }
     
@@ -104,6 +109,19 @@ public class Facade implements Serializable {
                 selected.add(i);
         }
         return selected;
+    }
+     
+     public Usuario getUserByEmailAndPassword(String email, String password) throws DAOException {
+         return usuarioDao.getUserByEmailAndPassword(email, password);
+     }
+     
+     
+    public Usuario getUserByEmail(String email) throws DAOException {
+        try {
+            return usuarioDao.getUserByEmail(email);
+        } catch (DAOException ex) {
+            throw ex;
+        }
     }
      
 }

@@ -34,19 +34,67 @@
         </div>
 
         <div class="row">
-            <div class="container z-depth-4">
-                <div class="col s12 m4">
-                    <h4>Deals over the last 12 months</h4>
-                    <div class="chip">12</div>
-                </div>
-                <div class="col s12 m4">
+            <div class="container">
+                <div class="z-depth-2">
+                    <div class="col s12 m4 center">
+                        <h4>Deals over the last 12 months</h4>
+                        <div class="chip">12</div>
+                    </div>
+                    <div class="col s12 m4 center">
+                        <h4>60% Recommend</h4>
+                        <h5>684 reviews</h5>
+                        <div class="chip">trusts founder decisions</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Tell founders whot you think</h5>
+                        <a class="modal-trigger right" href="#modal1">
+                            <div class="row section">
+                                <!-- Modal Trigger -->
 
-                </div>
-                <div class="col s12 m4">
+                                <p:rating value="#{ratingView.rating2}" stars="5" cancel="false" />
 
+                            </div>
+                        </a>
+                    </div>  
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>Like or No Like</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="container">
+                <ui:repeat value="#{investorsBean.investors}" var="investor" >
+                    <div class="col s12 m2 center center-align z-depth-2" style="margin: 20px">
+                        <div class="row">
+                            <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle img-avatar" />
+                        </div>
+                        <div class="row">
+                            <h5 class="row">Tio Bio das Meninas</h5>
+                        </div>
+                        <div class="row">
+                            <h4>9.1</h4>
+                        </div>
+                        <div class="row">
+                            <p>985 reviews</p>
+                        </div>
+                        <div class="row">
+                            <div class="chip">Marketinf Network</div>
+                        </div>
+                    </div>
+                </ui:repeat>
+            </div>
+        </div>
+
+
 
     </ui:define>
 

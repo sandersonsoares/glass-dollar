@@ -1,11 +1,51 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="/WEB-INF/templates/template.xhtml">
 
+
     <ui:define name="content">
-           Bem Vindo!
+
+        <ui:include src="../WEB-INF/templates/searchBar.xhtml"/>
+
+        <div class="row">
+            <div class="container">
+                <div class="z-depth-4">
+                    <div class="card-content">
+                        <h:form>
+                            <h:commandLink class="cell" action="#{linksUtilBean.loginPage()}" >
+                                <p:dataList class="collection" value="#{investorsBean.investors}" var="investor" >
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s3 m2">
+                                                <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle img-avatar" />  
+                                            </div>
+                                            <div class="col s7 m9">
+                                                <h3 class="title">#{investor.name}</h3> 
+                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local |
+                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio |
+                                                    <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...
+                                                </p>
+                                            </div>
+
+                                            <div class="col s2 m1 right right-align ">
+                                                <h4>9.8</h4>
+                                                <p>689 reviews</p>
+                                                <div class="chip">Hands On</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </p:dataList>
+                            </h:commandLink>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </ui:define>
 
 </ui:composition>
+
