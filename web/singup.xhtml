@@ -7,53 +7,53 @@
 
     <ui:define name="content">
         
-        <div class="row center-card" style="margin-top: 35px;">
-            <div class="card">
-                <h:form>
-                    <div class="card-content">
-                        <p class="card-title">Create account</p>
-                        
+        <div class="row center-card">
+            <center>
+                <div class="card" style="max-width: 420px;">
+                    <h:form>
+                        <div class="card-content">
+                            <p class="card-title">Create account</p>
+
+                            <div class="card-action">
+                                <div class="row">
+                                    <center>
+                                        <div style="max-width: 300px;">
+                                            Sing up to join glassdollar and  read reviews of founders about their investors
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <center>
+                                        <a style="cursor: pointer;">Sing up with Linkedin or Twitter</a>
+                                    </center>
+                                </div>
+                            </div>
+                            <p class="center grey-text">or</p>
+
+                            <p:messages id="msgs" autoUpdate="true" closable="true"/>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <p:inputText id="email" value="#{singInBean.email}" required="true" requiredMessage="E-mail is required!" validatorMessage="Insert a valid e-mail.">
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                    </p:inputText>
+                                    <p:outputLabel value="E-mail address" for="email"/>
+                                </div>
+                                <div class="input-field col s12">
+                                    <p:password id="password" value="#{singInBean.password}" required="true" requiredMessage="Password is required!"/>
+                                    <p:outputLabel value="Password" for="password"/>
+                                </div>
+                            </div>
+
+                        </div>
                         <div class="card-action">
-                            <div class="row">
-                                <center>
-                                    <div style="max-width: 300px;">
-                                        Sing up to join glassdollar and  read reviews of founders about their investors
-                                    </div>
-                                </center>
-                            </div>
-                            <div class="row">
-                                <center>
-                                    <a style="cursor: pointer;">Sing up with Linkedin or Twitter</a>
-                                </center>
-                            </div>
+                            <p:commandLink value="Sing Up" class="waves-effect waves-light btn width100" action="#{singInBean.singIn()}"/>
                         </div>
-                        <p class="center grey-text">or</p>
-
-                        <p:messages id="msgs" autoUpdate="true" closable="true"/>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <p:inputText id="email" value="#{singInBean.email}" required="true" requiredMessage="E-mail is required!" validatorMessage="Insert a valid e-mail.">
-                                    <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                                </p:inputText>
-                                <p:outputLabel value="E-mail address" for="email"/>
-                            </div>
-                            <div class="input-field col s12">
-                                <p:password id="password" value="#{singInBean.password}" required="true" requiredMessage="Password is required!"/>
-                                <p:outputLabel value="Password" for="password"/>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="card-action">
-                        <p:commandLink value="Sing Up" class="waves-effect waves-light btn width100" action="#{singInBean.singIn()}"/>
-                    </div>
-                </h:form>
-            </div>
+                    </h:form>
+                </div>
+            </center>
         </div>
-        <div style="min-height: 640px;">
-            
-        </div>
+        
     </ui:define>
 
 </ui:composition>

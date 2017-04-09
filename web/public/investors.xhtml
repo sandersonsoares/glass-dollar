@@ -28,27 +28,17 @@
                                             </div>
                                             <div class="col s7 m9">
                                                 <h3 class="title">#{investor.name}</h3> 
-<<<<<<< HEAD
                                                 <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local } |
                                                     <i class="fa fa-usd teal-text" aria-hidden="true"/> #{investor.ticketSize} Mio $ |
                                                     <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...
-=======
-                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> #{investor.offices} |
-                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size #{investor.mediumTicketSize} Mio |
-                                                    <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: <ui:repeat value="#{investor.areas}" var="area">#{area},</ui:repeat>
->>>>>>> 77cf199557443bcc5329bbff3c65ecad67affc69
                                                 </p>
                                             </div>
 
                                             <div class="col s2 m1 right right-align ">
                                                 <h4>#{investor.overallRating}</h4>
-<<<<<<< HEAD
-                                                <p>#{investor.reviews.size()}</p>
-                                                <div class="chip">Hands On</div>
-=======
+
                                                 <p>#{investor.reviews.size()} reviews</p>
                                                 <div class="chip">#{investor.positiveInvestment()}</div>
->>>>>>> 77cf199557443bcc5329bbff3c65ecad67affc69
                                             </div>
                                         </div>
                                     </li>
