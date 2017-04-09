@@ -10,24 +10,24 @@
 
         <div class="row" style="margin-top: 25px">
             <div class="container">
-                    <div class="row">
-                        <div class="col s12 m12 l4 center">
-                            <img src="http://imgs.sapo.pt/haksolok/content/img/bill_gates_malaria.jpg" alt="" class="circle img-avatar-perfil" />  
-                        </div>
-                        <div class="col s12 m12 l4 center">
-                            <h3 class="title">Tio Bio das Meninas</h3> 
-                            <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local </p>
-                            <p><i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio </p>
-                            <p><i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...</p>
-                            <a><i class="fa fa-money teal-text" aria-hidden="true"/> www.billgates.com </a>
-                        </div>
-
-                        <div class="col s12 m12 l4 center">
-                            <h4>9.8</h4>
-                            <p>689 reviews</p>
-                            <div class="chip">Hands On</div>
-                        </div>
+                <div class="row">
+                    <div class="col s12 m12 l4 center">
+                        <img src="#{investorsBean.invester.logoUrl}" alt="" class="circle img-avatar-perfil" />  
                     </div>
+                    <div class="col s12 m12 l4 center">
+                        <h3 class="title">#{investorsBean.invester.name}</h3> 
+                        <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> #{investorsBean.invester.offices} </p>
+                        <p><i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio </p>
+                        <p><i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...</p>
+                        <a><i class="fa fa-money teal-text" aria-hidden="true"/> #{investorsBean.invester.companyUrl} </a>
+                    </div>
+
+                    <div class="col s12 m12 l4 center">
+                        <h4>#{investorsBean.invester.overallRating}</h4>
+                        <p>#{investorsBean.invester.reviews.size()}</p>
+                        <div class="chip">#{investorsBean.invester.positiveInvestment()}</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -74,7 +74,7 @@
         </div>
         <div class="row">
             <div class="container">
-                <ui:repeat value="#{investorsBean.investors}" var="investor" size="4">
+                <!--<ui:repeat value="#{investorsBean.investors}" var="investor" size="4">-->
                     <div class="col s12 m6 l3">
                         <div class="card">
                             <div class="card-image circle">
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                </ui:repeat>
+                <!--</ui:repeat>-->
             </div>
         </div>
 
@@ -266,7 +266,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="container">
                 <h2>After the deal</h2>

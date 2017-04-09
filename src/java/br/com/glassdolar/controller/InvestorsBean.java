@@ -11,6 +11,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 /**
@@ -18,7 +19,7 @@ import javax.faces.context.FacesContext;
  * @author Girlian Santos
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class InvestorsBean {
     
     private Facade facade;
@@ -28,6 +29,7 @@ public class InvestorsBean {
     private Double ticket;
     
     public InvestorsBean(){
+        facade = new Facade();
         this.invester = new Invester();
         String idString = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("id");
         if(idString != null && !idString.equals("")){

@@ -46,6 +46,6 @@ public class LinksUtilBean implements Serializable {
     }
     
     public String investorPage(Long id){
-        return "/faces/public/investor.xhtml?id="+String.valueOf(id)+FACES_REDIRECT;
+        return "/faces/public/investor.xhtml?faces-redirect=true&id="+id;
     }
 }
