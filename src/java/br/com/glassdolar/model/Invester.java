@@ -88,14 +88,6 @@ public class Invester extends Usuario implements Serializable{
         this.investments = investments;
     }
 
-    public List<String> getLocals() {
-        return offices;
-    }
-
-    public void setLocals(List<String> locals) {
-        this.offices = locals;
-    }
-
     public List<String> getAreas() {
         return areas;
     }
@@ -143,6 +135,8 @@ public class Invester extends Usuario implements Serializable{
         for(Review r: this.reviews){
             rating += r.getOverallRating();
         }
+        if(rating == 0.0)
+            return rating;
         return rating/reviews.size();   
     }    
 

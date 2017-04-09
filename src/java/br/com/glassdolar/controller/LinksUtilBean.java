@@ -32,4 +32,8 @@ public class LinksUtilBean implements Serializable {
     public String singUpPage(){
         return "/faces/singup.xhtml"+FACES_REDIRECT;
     }
+    
+    public String investorsPage(){
+        return "/faces/public/investors.xhtml"+FACES_REDIRECT;
+    }
 }

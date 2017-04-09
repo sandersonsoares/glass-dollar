@@ -24,15 +24,15 @@
                                             </div>
                                             <div class="col s7 m9">
                                                 <h3 class="title">#{investor.name}</h3> 
-                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local |
-                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio |
+                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local } |
+                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> #{investor.ticketSize} Mio $ |
                                                     <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...
                                                 </p>
                                             </div>
 
                                             <div class="col s2 m1 right right-align ">
-                                                <h4>9.8</h4>
-                                                <p>689 reviews</p>
+                                                <h4>#{investor.overallRating}</h4>
+                                                <p>#{investor.reviews.size()}</p>
                                                 <div class="chip">Hands On</div>
                                             </div>
                                         </div>

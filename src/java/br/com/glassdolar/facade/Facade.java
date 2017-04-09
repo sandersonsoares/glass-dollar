@@ -66,8 +66,8 @@ public class Facade implements Serializable {
         List<Invester> lista = getAllInvestors();
         List<Invester> selected = new ArrayList<>();
         for(Invester i: lista){
-            for(String s: i.getLocals()){
-                if(s.equals(local))
+            for(String s: i.getOffices()){
+                if(s.contains(local))
                     selected.add(i);
             }
         }
@@ -90,7 +90,17 @@ public class Facade implements Serializable {
         List<Invester> lista = getAllInvestors();
         List<Invester> selected = new ArrayList<>();
         for(Invester i: lista){
-            if(name.equals(i.getName()))
+            if(name.contains(i.getName()))
+                selected.add(i);
+        }
+        return selected;
+    }
+     
+      public List<Invester> getInvestorByTicket(Double value){
+        List<Invester> lista = getAllInvestors();
+        List<Invester> selected = new ArrayList<>();
+        for(Invester i: lista){
+            if(i.getTicketSize() <= value)
                 selected.add(i);
         }
         return selected;

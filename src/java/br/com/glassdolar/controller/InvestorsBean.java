@@ -23,6 +23,8 @@ public class InvestorsBean {
     private Facade facade;
     private List<Invester> investors;
     private Invester invester;
+    private String name, office, area;
+    private Double ticket;
     
     public InvestorsBean(){
         this.invester = new Invester();
@@ -38,20 +40,24 @@ public class InvestorsBean {
         facade.saveInvester(i);
     }
     
-    public List<Invester> getByName(String name){
-        return facade.getInvestorByName(name);
+    public List<Invester> getByName(){
+        return facade.getInvestorByName(this.name);
     }
     
-    public List<Invester> getByArea(String area){
+    public List<Invester> getByArea(){
         return facade.getInvestorByArea(area);
     }
     
-     public List<Invester> getByLocal(String local){
-        return facade.getInvestorByLocal(local);
+     public List<Invester> getByLocal(){
+        return facade.getInvestorByLocal(office);
     }
 
     public List<Invester> getInvestors(){
         return this.investors;
+    }
+    
+    public List<Invester> getByTicket(){
+        return facade.getInvestorByTicket(ticket);
     }
 
     public void setInvestors(List<Invester> investors) {
@@ -65,6 +71,44 @@ public class InvestorsBean {
     public void setInvester(Invester invester) {
         this.invester = invester;
     }
-    
-    
+
+    public Facade getFacade() {
+        return facade;
+    }
+
+    public void setFacade(Facade facade) {
+        this.facade = facade;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getOffice() {
+        return office;
+    }
+
+    public void setOffice(String office) {
+        this.office = office;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public Double getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Double ticket) {
+        this.ticket = ticket;
+    }
 }
