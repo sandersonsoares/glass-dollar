@@ -5,30 +5,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Girlian Santos
  */
 @Entity
-public class Founder implements Serializable{
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+@PrimaryKeyJoinColumn(name = "id")
+public class Founder extends Usuario implements Serializable{
     
     private String name;
     private String email;
     private String descricao;
     private String companyURL;
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+ 
 
     public String getName() {
         return name;

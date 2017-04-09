@@ -5,7 +5,7 @@
  */
 package br.com.glassdolar.controller;
 
-import br.com.glassdolar.model.Perfil;
+import br.com.glassdolar.model.Usuario;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -45,9 +45,9 @@ public class LoginBean {
     
     public String enter(){
         if (login != null && senha != null && login.equals("admin") && senha.equals("admin")) {
-            Perfil perfil = new Perfil();
+            Usuario perfil = new Usuario();
             perfil.setLogin("admin");
-            perfil.setSenha("admin");
+            perfil.setSenha("admin123");
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", perfil);
             return "/faces/private/home.xhtml"+LinksUtilBean.FACES_REDIRECT;
         } else {
@@ -57,7 +57,7 @@ public class LoginBean {
     }
     
     public String logout(){
-        Perfil perfil = new Perfil();
+        Usuario perfil = new Usuario();
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("user");
         return "/privado/principal.xhtml?faces-redirect=true";
     }

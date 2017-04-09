@@ -6,7 +6,7 @@
 package br.com.glassdolar.controller;
 
 import br.com.glassdolar.facade.Facade;
-import br.com.glassdolar.model.Perfil;
+import br.com.glassdolar.model.Usuario;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -34,10 +34,10 @@ public class SingInBean {
 
     public String singIn() {
         if (email != null && password != null) {
-            Perfil perfil = new Perfil();
-            perfil.setLogin(email);
-            perfil.setSenha(password);
-            facade.savePerfil(perfil);
+            Usuario user = new Usuario();
+            user.setLogin(email);
+            user.setSenha(password);
+            facade.saveUser(user);
             return "/faces/index.xhtml" + LinksUtilBean.FACES_REDIRECT;
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Insert a value to e-mail and to password.", "Insert a value to e-mail and to password."));

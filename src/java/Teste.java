@@ -3,12 +3,8 @@ import br.com.glassdolar.auxiliar.ActiveOption;
 import br.com.glassdolar.facade.Facade;
 import br.com.glassdolar.model.Founder;
 import br.com.glassdolar.model.Invester;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -19,10 +15,12 @@ public class Teste {
         Facade facade = new Facade();
         
         Invester i = new Invester();
+        i.setCompanyUrl("codeline.com.br");
         i.setActiveOption(ActiveOption.ACTIVE);
-        i.setCompanyUrl("http://codeline.com.br");
-        i.setLogoUrl("http://minhalogo.com");
-        i.setName("Thomas Turbando");
+        i.setLogin("m123");
+        i.setSenha("senha");
+        i.setLogoUrl("http://aslaskjdfhkajs");
+        
         facade.saveInvester(i);
 }
 }

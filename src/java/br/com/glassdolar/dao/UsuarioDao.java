@@ -5,12 +5,12 @@
  */
 package br.com.glassdolar.dao;
 
-import br.com.glassdolar.model.Perfil;
+import br.com.glassdolar.model.Usuario;
 
 /**
  *
  * @author marce
  */
-public class PerfilDao extends GenericDaoImpl<Perfil> {
+public class UsuarioDao extends GenericDaoImpl<Usuario> {
     
 }
