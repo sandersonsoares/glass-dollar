@@ -29,15 +29,6 @@ p {
     transform: translate(-50%, -50%);
 }
 
-.card-login {
-    margin: 0 auto;
-    width: 50%; /* Altere para o valor da largura desejada. */
-}
-.card-login-content {
-    padding: 24px;
-    flex: none;
-}
-
 .h-logo{
     margin-top:45px;
     margin-bottom:25px;
