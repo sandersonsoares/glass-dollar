@@ -3,6 +3,7 @@ package br.com.glassdolar.model;
 import br.com.glassdolar.auxiliar.ActiveOption;
 import br.com.glassdolar.auxiliar.TagFundraisingImpression;
 import br.com.glassdolar.auxiliar.TagInvestmentCriteria;
+import br.com.glassdolar.auxiliar.TagInvestmentType;
 import br.com.glassdolar.auxiliar.TagNegativeInvestment;
 import br.com.glassdolar.auxiliar.TagPositiveInvestment;
 import java.io.Serializable;
@@ -37,15 +38,20 @@ public class Invester extends Usuario implements Serializable{
     private List<Review> reviews;
     private String companyUrl;
     private ActiveOption activeOption;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Investment> investments;
-    @OneToMany(mappedBy = "invester")
+    @OneToMany(mappedBy = "invester", cascade = CascadeType.ALL)
     private List<Partner> partners;
     private Double ticketSize;
     private Double mediumTicketSize;
 
     public Invester(){
         this.reviews = new ArrayList<>();
+        this.areas = new ArrayList<>();
+        this.geography = new ArrayList<>();
+        this.offices = new ArrayList<>();
+        this.partners = new ArrayList<>();
+        this.investments = new ArrayList<>();
     }
     
     public String getName() {
@@ -205,6 +211,20 @@ public class Invester extends Usuario implements Serializable{
             }
         }
         return TagPositiveInvestment.values()[most(investments)].tag;
+    }
+    
+     public String tagInvestmentType(){
+        List<Integer> types = new ArrayList();
+        for(int i = 0; i < TagInvestmentType.values().length; i++){
+            types.add(0);
+            for(Review r: reviews){
+                if(r.getTagPositive()!= null){
+                if(r.getTagPositive().equals(TagPositiveInvestment.values()[i]))
+                    types.set(i, types.get(i)+1);
+                }
+            }
+        }
+        return TagInvestmentType.values()[most(types)].tag;
     }
     
     public String fundraisingImpression(){

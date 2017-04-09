@@ -3,6 +3,7 @@ package br.com.glassdolar.model;
 
 import br.com.glassdolar.auxiliar.TagFundraisingImpression;
 import br.com.glassdolar.auxiliar.TagInvestmentCriteria;
+import br.com.glassdolar.auxiliar.TagInvestmentType;
 import br.com.glassdolar.auxiliar.TagNegativeInvestment;
 import br.com.glassdolar.auxiliar.TagPositiveInvestment;
 import java.io.Serializable;
@@ -21,14 +22,17 @@ public class Review implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    Double overallRating;
+    private Double overallRating;
+    private String description;
     private boolean investOffer;
     private boolean investimentoAceito;
     private boolean indicateFriend;
+    private boolean shortResponse;
     private TagNegativeInvestment tagNegative;
     private TagPositiveInvestment tagPositive;
     private TagInvestmentCriteria tagCriteria;
     private TagFundraisingImpression tagImpression;
+    private TagInvestmentType tagInvestmentType;
 
     public Long getId() {
         return id;
@@ -101,6 +105,30 @@ public class Review implements Serializable{
     public void setTagImpression(TagFundraisingImpression tagImpression) {
         this.tagImpression = tagImpression;
     }
-    
+
+    public TagInvestmentType getTagInvestmentType() {
+        return tagInvestmentType;
+    }
+
+    public void setTagInvestmentType(TagInvestmentType tagInvestmentType) {
+        this.tagInvestmentType = tagInvestmentType;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isShortResponse() {
+        return shortResponse;
+    }
+
+    public void setShortResponse(boolean shortResponse) {
+        this.shortResponse = shortResponse;
+    }
    
+    
 }
