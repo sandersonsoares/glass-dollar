@@ -26,6 +26,7 @@ public class Usuario implements Serializable{
     private Long id;
     private String login;
     private String senha;
+    private String whyLogin;
     private boolean alterarSenhaProxAcesso;
 
     public Long getId() {
@@ -58,6 +59,14 @@ public class Usuario implements Serializable{
 
     public void setAlterarSenhaProxAcesso(boolean alterarSenhaProxAcesso) {
         this.alterarSenhaProxAcesso = alterarSenhaProxAcesso;
+    }
+
+    public String getWhyLogin() {
+        return whyLogin;
+    }
+
+    public void setWhyLogin(String whyLogin) {
+        this.whyLogin = whyLogin;
     }
     
     

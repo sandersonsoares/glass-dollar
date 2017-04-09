@@ -7,7 +7,9 @@ package br.com.glassdolar.model;
 
 import br.com.glassdolar.auxiliar.TagPartnerIterator;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +28,8 @@ public class Partner implements Serializable{
     private Long id;
     
     private String name;
-    private Double overalRating;
+    @ElementCollection
+    private List<Double> overalRating;
     private int reviews;
     @ManyToOne
     private Invester invester;
@@ -34,6 +37,10 @@ public class Partner implements Serializable{
     private String perfilUrl;
     @OneToMany
     private List<TagPartnerIterator> tags;
+    
+    public Partner(){
+        this.overalRating = new ArrayList<>();
+    }
     
     public Long getId() {
         return id;
@@ -50,15 +57,7 @@ public class Partner implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-
-    public Double getOveralRating() {
-        return overalRating;
-    }
-
-    public void setOveralRating(Double overalRating) {
-        this.overalRating = overalRating;
-    }
-
+    
     public int getReviews() {
         return reviews;
     }
@@ -98,4 +97,14 @@ public class Partner implements Serializable{
     public void setTags(List<TagPartnerIterator> tags) {
         this.tags = tags;
     }
+
+    public List<Double> getOveralRating() {
+        return overalRating;
+    }
+
+    public void setOveralRating(List<Double> overalRating) {
+        this.overalRating = overalRating;
+    }
+    
+    
 }
