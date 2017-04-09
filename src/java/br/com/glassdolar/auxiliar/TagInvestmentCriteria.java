@@ -23,4 +23,23 @@ public enum TagInvestmentCriteria {
     private TagInvestmentCriteria(String tag){
         this.tag = tag;
     }
+    
+    @Override
+    public String toString(){
+        switch(this){
+            case SIGNIFICANT_TRACTION:
+                return "Significant traction";
+            case PROD_MARK_FIT:
+                return "Product-Market fit";
+            case REVENUES:
+                return "Revenues";
+            case TECHNICAL_FOUNDER:
+                return "Technical Founder";
+            case ABOV_REVENUE:
+                return "Above 5 mio $ revenue";
+            case BIG_VISION:
+                return "Big vision";
+        }
+        return this.tag;
+    }
 }

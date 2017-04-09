@@ -10,7 +10,7 @@ package br.com.glassdolar.auxiliar;
  * @author Girlian Santos
  */
 public enum TagPositiveInvestment{
-    TRUS("Trus founder decisions"),
+    TRUS("Trust founder decisions"),
     HANDS("Hands-On"),
     SUPPORT("Supports with follow on");
     
@@ -18,5 +18,18 @@ public enum TagPositiveInvestment{
     
     private TagPositiveInvestment(String tag){
         this.tag = tag;
+    }
+    
+    @Override
+    public String toString(){
+        switch(this){
+            case TRUS: 
+                return "Trus founder decisions";
+            case HANDS:
+                return "Hands-on";
+            case SUPPORT:
+                return "Supports with follow on";
+        }
+        return this.tag;
     }
 }
