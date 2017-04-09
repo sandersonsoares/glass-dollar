@@ -9,17 +9,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Girlian Santos
  */
 @Entity
-public class Invester implements Serializable{
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+@PrimaryKeyJoinColumn(name = "id")
+public class Invester extends Usuario implements Serializable{
+          
     private String name;
     @ElementCollection
     private List<String> locals;
@@ -34,14 +33,6 @@ public class Invester implements Serializable{
     private List<Partner> partners;
     private Double ticketSize;
     private Double mediumTicketSize;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

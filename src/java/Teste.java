@@ -14,22 +14,13 @@ public class Teste {
     public static void main(String[] args){
         Facade facade = new Facade();
         
-        List<Invester> investers = facade.getAllInvestors();
-        List<Invester> porNome = facade.getInvestorByName("Marcelo");
-        List<Invester> porLocal = facade.getInvestorByLocal("Toronto");
-        List<Invester> porArea = facade.getInvestorByArea("AI");
+        Invester i = new Invester();
+        i.setCompanyUrl("codeline.com.br");
+        i.setActiveOption(ActiveOption.ACTIVE);
+        i.setLogin("m123");
+        i.setSenha("senha");
+        i.setLogoUrl("http://aslaskjdfhkajs");
         
-        for(Invester i: investers)
-            System.out.println(i.getName());
-        System.out.println("---------------------------------------");
-        for(Invester i: porArea)
-            System.out.println(i.getName());
-        System.out.println("---------------------------------------");
-        for(Invester i: porLocal)
-            System.out.println(i.getName());
-        System.out.println("---------------------------------------");
-        for(Invester i: porNome)
-            System.out.println(i.getName());
-        System.out.println("---------------------------------------");
+        facade.saveInvester(i);
 }
 }

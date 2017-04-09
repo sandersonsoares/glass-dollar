@@ -7,16 +7,22 @@ package br.com.glassdolar.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
  *
  * @author marce
  */
 @Entity
-public class Perfil implements Serializable {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Usuario implements Serializable{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String login;
     private String senha;

@@ -7,7 +7,6 @@ package br.com.glassdolar.controller;
 
 import br.com.glassdolar.facade.Facade;
 import br.com.glassdolar.model.Invester;
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -33,6 +32,10 @@ public class InvestorsBean {
     public void init(){
         this.facade = new Facade();
         this.investors = facade.getAllInvestors();
+    }
+    
+    public void saveInvestor(Invester i){
+        facade.saveInvester(i);
     }
     
     public List<Invester> getByName(String name){
