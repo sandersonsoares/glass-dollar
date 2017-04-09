@@ -37,6 +37,7 @@ public class GenericDaoImpl<T> implements IGenericDao<T> {
             manager.flush();
             manager.refresh(t);
             manager.getTransaction().commit();
+            manager.close();
             return t;
         } catch (Exception e) {
             e.printStackTrace();

@@ -38,7 +38,7 @@ public class Invester extends Usuario implements Serializable{
     private List<Review> reviews;
     private String companyUrl;
     private ActiveOption activeOption;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "invester",cascade = CascadeType.ALL)
     private List<Investment> investments;
     @OneToMany(mappedBy = "invester", cascade = CascadeType.ALL)
     private List<Partner> partners;
@@ -162,6 +162,8 @@ public class Invester extends Usuario implements Serializable{
         this.geography = geography;
     }
     
+    
+    
     public int indicateToAFriend(){
         int counter = 0;
         for(Review r: reviews){
@@ -182,7 +184,7 @@ public class Invester extends Usuario implements Serializable{
             }
             }
         }
-        return TagInvestmentCriteria.values()[most(criteria)].tag;
+        return TagInvestmentCriteria.values()[most(criteria)].toString();
     }
     
     public String negativeInvestment(){
@@ -196,7 +198,7 @@ public class Invester extends Usuario implements Serializable{
                 }
             }
         }
-        return TagNegativeInvestment.values()[most(nInvestments)].tag;
+        return TagNegativeInvestment.values()[most(nInvestments)].toString();
     }
     
     public String positiveInvestment(){
@@ -210,7 +212,7 @@ public class Invester extends Usuario implements Serializable{
                 }
             }
         }
-        return TagPositiveInvestment.values()[most(investments)].tag;
+        return TagPositiveInvestment.values()[most(investments)].toString();
     }
     
      public String tagInvestmentType(){
@@ -224,7 +226,7 @@ public class Invester extends Usuario implements Serializable{
                 }
             }
         }
-        return TagInvestmentType.values()[most(types)].tag;
+        return TagInvestmentType.values()[most(types)].toString();
     }
     
     public String fundraisingImpression(){
@@ -238,7 +240,7 @@ public class Invester extends Usuario implements Serializable{
                 }
             }
         }
-        return TagFundraisingImpression.values()[most(fundraising)].tag;
+        return TagFundraisingImpression.values()[most(fundraising)].toString();
     }
     
     private int most(List<Integer> lista){
