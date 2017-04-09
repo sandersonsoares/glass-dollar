@@ -5,6 +5,7 @@
  */
 package br.com.glassdolar.controller;
 
+import br.com.glassdolar.exception.DAOException;
 import br.com.glassdolar.facade.Facade;
 import br.com.glassdolar.model.Usuario;
 import javax.annotation.PostConstruct;
@@ -37,7 +38,12 @@ public class SingInBean {
             Usuario user = new Usuario();
             user.setLogin(email);
             user.setSenha(password);
-            facade.saveUser(user);
+            try {
+                facade.saveUser(user);
+            } catch (DAOException e) {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), e.getMessage()));
+                return "";
+            }
             return "/faces/index.xhtml" + LinksUtilBean.FACES_REDIRECT;
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Insert a value to e-mail and to password.", "Insert a value to e-mail and to password."));

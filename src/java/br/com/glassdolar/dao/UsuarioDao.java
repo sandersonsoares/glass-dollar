@@ -8,9 +8,10 @@ package br.com.glassdolar.dao;
 import br.com.glassdolar.exception.DAOException;
 import br.com.glassdolar.model.Usuario;
 import br.com.glassdolar.utils.PersistenceUtil;
-import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -19,16 +20,30 @@ import javax.persistence.Query;
 public class UsuarioDao extends GenericDaoImpl<Usuario> {
     
     public Usuario getUserByEmailAndPassword(String email, String password) throws DAOException{
+        Usuario resultado = null;
         EntityManager manager = PersistenceUtil.getEntityManager();
         try {
-            Query query = manager.createNativeQuery("SELECT * FROM usuario WHERE login = :email AND senha = :password", Usuario.class);
-            query.setParameter("email", email);
-            query.setParameter("password", password);
-            List<Usuario> users = query.getResultList();
-            if(users != null && users.size()>0){
-                return users.get(0);
-            }
-            return null;
+            Session session = (Session) manager.getDelegate();
+            Criteria criteria = session.createCriteria(Usuario.class);
+            criteria.add(Restrictions.eq("login", email));
+            criteria.add(Restrictions.eq("senha", password));
+            resultado = (Usuario) criteria.uniqueResult();
+            return resultado;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new DAOException(e.getMessage());
+        }
+    }
+    
+    public Usuario getUserByEmail(String email) throws DAOException{
+        Usuario resultado = null;
+        EntityManager manager = PersistenceUtil.getEntityManager();
+        try {
+            Session session = (Session) manager.getDelegate();
+            Criteria criteria = session.createCriteria(Usuario.class);
+            criteria.add(Restrictions.eq("login", email));
+            resultado = (Usuario) criteria.uniqueResult();
+            return resultado;
         } catch (Exception e) {
             e.printStackTrace();
             throw new DAOException(e.getMessage());

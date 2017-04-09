@@ -8,8 +8,12 @@
 
     <ui:define name="content">
 
+        <div class="container">
+            <h5>Investor reviews by founders</h5>
+            <p:panel style="padding: 0px;" rendered="#{loginBean.isLoged}">Wellcome, loged as #{loginBean.user.login}</p:panel>
+        </div>
         <ui:include src="../WEB-INF/templates/searchBar.xhtml"/>
-
+        
         <div class="row">
             <div class="container">
                 <div class="z-depth-4">
