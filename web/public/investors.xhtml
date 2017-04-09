@@ -20,24 +20,24 @@
                     <div class="card-content">
                         <h:form>
                             <h:commandLink class="cell" action="#{linksUtilBean.loginPage()}" >
-                                <p:dataList class="collection" value="#{investorsBean.investors}" var="investor" >
+                                <p:dataList class="collection" value="#{investorsBean.investors}" var="investor" paginator="true" rows="6">
                                     <li class="collection-item">
                                         <div class="row">
                                             <div class="col s3 m2">
-                                                <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle img-avatar" />  
+                                                <img src="#{investor.logoUrl}" alt="" class="circle img-avatar" />  
                                             </div>
                                             <div class="col s7 m9">
                                                 <h3 class="title">#{investor.name}</h3> 
-                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local |
-                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio |
-                                                    <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...
+                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> #{investor.offices} |
+                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size #{investor.mediumTicketSize} Mio |
+                                                    <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: <ui:repeat value="#{investor.areas}" var="area">#{area},</ui:repeat>
                                                 </p>
                                             </div>
 
                                             <div class="col s2 m1 right right-align ">
-                                                <h4>9.8</h4>
-                                                <p>689 reviews</p>
-                                                <div class="chip">Hands On</div>
+                                                <h4>#{investor.overallRating}</h4>
+                                                <p>#{investor.reviews.size()} reviews</p>
+                                                <div class="chip">#{investor.positiveInvestment()}</div>
                                             </div>
                                         </div>
                                     </li>
