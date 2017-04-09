@@ -8,7 +8,7 @@
     <nav class="cor-principal">
         <h:form>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo" style="margin-left: 10px">GlassDollar</a>
+                <p:commandLink action="#{linksUtilBean.indexPage()}" class="brand-logo" style="margin-left: 10px">GlassDollar</p:commandLink>
                 <a href="#" data-activates="mobile-demo" class="button-collapse" style="margin-left: 10px"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li>
@@ -17,7 +17,7 @@
                         </h:commandLink>
                     </li> 
                     <li>
-                        <h:commandLink  action="#{linksUtilBean.loginPage()}" rendered="#{!loginBean.isLoged}">
+                        <h:commandLink  action="#{linksUtilBean.singUpPage()}" rendered="#{!loginBean.isLoged}">
                             Sign Up
                         </h:commandLink>
                     </li>
