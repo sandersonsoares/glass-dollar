@@ -1,13 +1,16 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
 
     <nav>
         <div class="nav-wrapper cor-principal">
             <a href="#" class="brand-logo">GlassDollar</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <h:form>
+                    <li><p:commandLink value="Login" ajax="false" action="#{linksUtilBean.loginPage()}"/></li>
+                    <li><p:commandLink value="Sign Up" action="#{linksUtilBean.singUpPage()}"/></li>
+                </h:form>
             </ul>
         </div>
     </nav>

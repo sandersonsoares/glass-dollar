@@ -7,6 +7,7 @@ package br.com.glassdolar.controller;
 
 import br.com.glassdolar.model.Usuario;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
@@ -42,10 +43,17 @@ public class LoginBean {
         this.senha = senha;
     }
     
-    public String login(){
-        Usuario perfil = new Usuario();
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", perfil);
-        return "/privado/principal.xhtml?faces-redirect=true";
+    public String enter(){
+        if (login != null && senha != null && login.equals("admin") && senha.equals("admin")) {
+            Usuario perfil = new Usuario();
+            perfil.setLogin("admin");
+            perfil.setSenha("admin123");
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", perfil);
+            return "/faces/private/home.xhtml"+LinksUtilBean.FACES_REDIRECT;
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong login or password!", "Wrong login or password!"));
+            return "";
+        }
     }
     
     public String logout(){
