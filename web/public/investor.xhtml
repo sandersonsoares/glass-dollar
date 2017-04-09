@@ -8,14 +8,13 @@
 
     <ui:define name="content">
 
-        <div class="row search-bar">
+        <div class="row" style="margin-top: 25px">
             <div class="container">
-                <li class="collection-item">
                     <div class="row">
-                        <div class="col s3 m2">
-                            <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle img-avatar" />  
+                        <div class="col s12 m12 l4 center">
+                            <img src="http://imgs.sapo.pt/haksolok/content/img/bill_gates_malaria.jpg" alt="" class="circle img-avatar-perfil" />  
                         </div>
-                        <div class="col s7 m9">
+                        <div class="col s12 m12 l4 center">
                             <h3 class="title">Tio Bio das Meninas</h3> 
                             <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local </p>
                             <p><i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio </p>
@@ -23,17 +22,16 @@
                             <a><i class="fa fa-money teal-text" aria-hidden="true"/> www.billgates.com </a>
                         </div>
 
-                        <div class="col s2 m1 right right-align ">
+                        <div class="col s12 m12 l4 center">
                             <h4>9.8</h4>
                             <p>689 reviews</p>
                             <div class="chip">Hands On</div>
                         </div>
                     </div>
-                </li>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row search-bar">
             <div class="container">
                 <div class="z-depth-2">
                     <div class="col s12 m4 center">
@@ -46,9 +44,9 @@
                         <div class="chip">trusts founder decisions</div>
                     </div>
                     <div class="col s12 m4">
-                        <h5>Tell founders whot you think</h5>
+                        <h5 class="right-align">Tell founders whot you think</h5>
                         <a class="modal-trigger right" href="#modal1">
-                            <div class="row section">
+                            <div class="row section right">
                                 <!-- Modal Trigger -->
 
                                 <p:rating value="#{ratingView.rating2}" stars="5" cancel="false" />
@@ -69,28 +67,254 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="container">
-                <ui:repeat value="#{investorsBean.investors}" var="investor" >
-                    <div class="col s12 m2 center center-align z-depth-2" style="margin: 20px">
-                        <div class="row">
-                            <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle img-avatar" />
-                        </div>
-                        <div class="row">
-                            <h5 class="row">Tio Bio das Meninas</h5>
-                        </div>
-                        <div class="row">
-                            <h4>9.1</h4>
-                        </div>
-                        <div class="row">
-                            <p>985 reviews</p>
-                        </div>
-                        <div class="row">
-                            <div class="chip">Marketinf Network</div>
+                <h2>The Paterns</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <ui:repeat value="#{investorsBean.investors}" var="investor" size="4">
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <div class="card-image circle">
+                                <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle" />
+                            </div>
+                            <div class="card-content">
+                                <h5 class="left-align title truncate">Tio Bio das Meninas</h5>
+                                <div class="center">
+                                    <h5>9.1</h5>
+                                    <p>985 reviews</p>
+                                    <div class="chip">Marketinf Network</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </ui:repeat>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container center center-align">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <h5>Routinely invest in</h5>
+                        <div class="chip">series a</div>
+                        <div class="chip">seed</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Tickets Size</h5>
+                        <div class="chip">Minimum $1M</div>
+                        <div class="chip">Median $1M</div>
+                        <div class="chip">Maximum $1M</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Target Geography</h5>
+                        <div class="chip">trusts founder decisions</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <h5>Routinely invest in spaces</h5>
+                        <div class="chip">trusts founder decisions</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Frequently funds</h5>
+                        <div class="chip">trusts founder decisions</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>IPOs / successful exits</h5>
+                        <p>(biggest exit valuation)</p>
+                        <div class="chip"><img src="http://www.yext.com/wp-content/uploads/2016/08/medallion-Snapchat.svg" alt="Contact Person"/>Snapchat</div>
+                        <div class="chip"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Contact Person"/>GitHub</div>
+                        <div class="chip">98 exists</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <h5>Found Size - RISED OVER TIME</h5>
+                        <div class="chip">Total $20.01B raised</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Latest exit</h5>
+                        <div class="chip"><img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" alt="Contact Person"/>(IPO, 2012, 16bn$)</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Most succeessful invest ment</h5>
+                        <div class="chip"><img src="http://purchasing.colliergov.net/Purchasing%20Icons/google_logo.png" alt="Contact Person"/>(IPO, 2012, 16bn$)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <h2>Getting in contact</h2>
+            </div>
+        </div>
+        <div class="row search-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <h5>Investiment criteria</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Requested Metrics</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Overall impression</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Other Tips</h5>
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                    <div class="col s12 m4">
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                    <div class="col s12 m4">
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <h2>The investiment process</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <h5>Stake</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Terms</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Who do They co-invest</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Other Tips</h5>
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                    <div class="col s12 m4">
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                    <div class="col s12 m4">
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="container">
+                <h2>After the deal</h2>
+            </div>
+        </div>
+        <div class="row search-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <h5>Recommend to friend</h5>
+                        <div class="chip">60% say Yes</div>
+                    </div>
+                    <div class="col s12 m8">
+                        <h5>Working with</h5>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                        <div class="chip">41 cool ppl</div>
+                        <div class="chip">65 Significations</div>
+                    </div>
+                    <div class="col s12 m4">
+                        <h5>Other Tips</h5>
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                    <div class="col s12 m4">
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                    <div class="col s12 m4">
+                        <p class="text-700">Lorem ipsum dolor sit amet</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus ultrices purus, nec venenatis mi imperdiet eu. Suspendisse faucibus augue ex, vel elementum libero sodales eu. Nam fermentum scelerisque libero, eu facilisis risus congue in. Proin dapibus varius est, vel blandit tortor sagittis et. Maecenas pharetra ornare nisi, ac faucibus dolor fringilla vitae. Phasellus quam dolor, placerat eu risus eleifend, aliquam egestas est. Donec aliquam pulvinar posuere. Donec tincidunt sem sed nulla ornare lobortis. Integer porta, odio vehicula rhoncus tempus, lorem tellus egestas elit, a pulvinar ante dui a sem. Aenean varius ac elit et ornare. Aliquam eu dignissim nulla, ut finibus metus. 
+                        </p>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"/> 55 agree <i class="fa fa-flag" style="margin: 10px" aria-hidden="true"/>Flag
+                    </div>
+                </div>
             </div>
         </div>
 
