@@ -5,49 +5,59 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <div class="row">
-        <div class="container">
-            <div class="col s12 m3">
-                <div class="input-field col s12">
-                    <h:selectOneMenu id="console1">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
-                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                    </h:selectOneMenu>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="input-field col s12">
-                    <h:selectOneMenu id="console2">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
-                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                    </h:selectOneMenu>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="input-field col s12">
-                    <h:selectOneMenu id="console3">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
-                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                    </h:selectOneMenu>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="input-field col s6">
+        <div class="col m12 search-bar">
+            <div class="row">
+                <div class="container">
+                    <div class="col s12 m3">
+                        <div class="input-field col s12">
+                            <h:selectOneMenu id="console1" value="">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="input-field col s12">
+                            <h:selectOneMenu id="console2" value="">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="input-field col s12">
+                            <h:selectOneMenu id="console3" value="">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
 
-                    <a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content">
-                        <i class="material-icons">add</i>
-                    </a>
+                        <div class="input-field col s12 m10">
+                            <!-- Switch -->
+                            <div class="switch" style="margin-top: 35px">
+                                <label>
+                                    Actives
+                                    <input type="checkbox"/>
+                                    <span class="lever"></span>
+                                    Inactives
+                                </label>
+                            </div>
+                        </div>
 
-                </div>
-                <div class="input-field col s6">
-                    <p:commandLink class="waves-effect waves-light btn-large width100 cor-secundaria">
-                        <i class="material-icons">search</i>
-                    </p:commandLink>
+                        <div class="input-field col s12 m2">
+                            <p:commandLink class="btn btn-floating btn-large pulse">
+                                <i class="material-icons">search</i>
+                            </p:commandLink>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

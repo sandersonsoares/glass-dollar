@@ -14,56 +14,32 @@
             <div class="container">
                 <div class="z-depth-4">
                     <div class="card-content">
-                        <ul class="collection">
-                            <li class="collection-item avatar">
-                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
-                                <span class="title">Title</span>
-                                <p>First Line <br/>
-                                    Second Line
-                                </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                            <li class="collection-item avatar">
-                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
-                                <span class="title">Title</span>
-                                <p>First Line <br/>
-                                    Second Line
-                                </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                            <li class="collection-item avatar">
-                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
-                                <span class="title">Title</span>
-                                <p>First Line <br/>
-                                    Second Line
-                                </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                            <li class="collection-item avatar">
-                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
-                                <span class="title">Title</span>
-                                <p>First Line <br/>
-                                    Second Line
-                                </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                            <li class="collection-item avatar">
-                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
-                                <span class="title">Title</span>
-                                <p>First Line <br/>
-                                    Second Line
-                                </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                            <li class="collection-item avatar">
-                                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle"/>
-                                <span class="title">Title</span>
-                                <p>First Line <br/>
-                                    Second Line
-                                </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                        </ul>
+                        <h:form>
+                            <h:commandLink class="cell" action="#{linksUtilBean.loginPage()}" >
+                                <p:dataList class="collection" value="#{investorsBean.investors}" var="investor" >
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s3 m2">
+                                                <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle img-avatar" />  
+                                            </div>
+                                            <div class="col s7 m9">
+                                                <h3 class="title">#{investor.name}</h3> 
+                                                <p><i class="fa fa-map-marker teal-text" aria-hidden="true"/> Local |
+                                                    <i class="fa fa-usd teal-text" aria-hidden="true"/> Median ticket size 3 Mio |
+                                                    <i class="fa fa-money teal-text" aria-hidden="true"/> Investid in: Bio Tech, etc...
+                                                </p>
+                                            </div>
+
+                                            <div class="col s2 m1 right right-align ">
+                                                <h4>9.8</h4>
+                                                <p>689 reviews</p>
+                                                <div class="chip">Hands On</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </p:dataList>
+                            </h:commandLink>
+                        </h:form>
                     </div>
                 </div>
             </div>

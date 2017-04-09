@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 
 body, *{
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
+
+h1, h2 {
+    font-weight: 900;
+}
+
+h3, h4 {
+    font-weight: 700;
+}
+
+h5, h6 {
+    font-weight: 400;
+}
+
+p {
+    font-weight: 400;
+}
+
 
 .center-card {
     position:absolute;
@@ -49,10 +67,42 @@ body, *{
     background: #4ECDC4 !important;
 }
 
+.color-text-1{
+    color: #2A3233 !important;
+}
+
+.color-text-2{
+    color: #4ECDC4 !important;
+}
+
 .width100 {
     width: 100% !important;
 }
 
 .icon-awesome {
     margin-right: 10px;
+}
+
+.search-bar{
+    background: #f1f1f1;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-filter{
+    margin-top: 25px; 
+    margin-left: 30px;
+}
+
+.img-avatar {
+    margin-right: 50px;
+    width: 150px !important;
+    height: 150px !important;
+    margin-bottom: -30px;
+}
+
+.cell{
+    color: #2A3233;
 }
