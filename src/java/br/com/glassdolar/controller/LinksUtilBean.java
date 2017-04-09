@@ -18,7 +18,7 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class LinksUtilBean implements Serializable {
     
-    private static final String FACES_REDIRECT = "?faces-redirect=true";
+    public static final String FACES_REDIRECT = "?faces-redirect=true";
     
     @PostConstruct
     public void init(){
@@ -26,10 +26,10 @@ public class LinksUtilBean implements Serializable {
     }
     
     public String loginPage(){
-        return "faces/login.xhtml"+FACES_REDIRECT;
+        return "/faces/login.xhtml"+FACES_REDIRECT;
     }
     
     public String singUpPage(){
-        return "faces/singup.xhtml"+FACES_REDIRECT;
+        return "/faces/singup.xhtml"+FACES_REDIRECT;
     }
 }
