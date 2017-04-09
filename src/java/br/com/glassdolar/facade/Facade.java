@@ -124,4 +124,13 @@ public class Facade implements Serializable {
         }
     }
      
+    public Invester getInvesterById(Long id){
+        try {
+            return investerDao.getById(id);
+        } catch (DAOException e) {
+            System.out.println("LIST INVESTORS ERROR");
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

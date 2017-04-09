@@ -11,6 +11,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -28,6 +29,13 @@ public class InvestorsBean {
     
     public InvestorsBean(){
         this.invester = new Invester();
+        String idString = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("id");
+        if(idString != null && !idString.equals("")){
+            Long id = Long.valueOf(idString);
+            if(id!=null){
+                invester = facade.getInvesterById(id);
+            }
+        }
     }
     
     @PostConstruct
