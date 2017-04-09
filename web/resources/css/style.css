@@ -20,13 +20,21 @@ p {
     font-weight: 400;
 }
 
+.text-900{
+    font-weight: 900;
+}
 
-.center-card {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+.text-700{
+    font-weight: 900;
+}
+
+.text-400{
+    font-weight: 900;
+}
+
+
+.login-card {
+    min-width: 450px;
 }
 
 .h-logo{
@@ -94,6 +102,11 @@ p {
     margin-bottom: -30px;
 }
 
+.img-avatar-perfil{
+    width: 300px !important;
+    height: 300px !important;
+}
+
 .cell{
     color: #2A3233;
 }
@@ -139,3 +152,10 @@ p {
     outline: 0;
     background: url('https://cdn4.iconfinder.com/data/icons/pointy/70/arrow4-4-512.png');
 }
+
+.card .card-image img{
+    border-radius: 50% !important;
+}
+
+
+
