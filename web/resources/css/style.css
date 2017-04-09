@@ -97,3 +97,20 @@ p {
 .cell{
     color: #2A3233;
 }
+
+
+
+
+.ui-rating-star a{
+    width: 35px;
+    height: 35px;
+    display: block;
+    background: url('../img/star-off.png');
+}
+
+.ui-rating-star-on a{
+    width: 35px;
+    height: 35px;
+    display: block;
+    background: url('../img/star.png') !important;
+}
