@@ -91,7 +91,7 @@ public class GenericDaoImpl<T> implements IGenericDao<T> {
         List<T> resultado = null;
         EntityManager manager = PersistenceUtil.getEntityManager();
         try {
-            Query query = manager.createQuery("SELECT * FROM "+classe.getSimpleName(), classe);
+            Query query = manager.createQuery("SELECT o FROM "+classe.getSimpleName()+ " o", classe);
             return query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();

@@ -3,12 +3,8 @@ import br.com.glassdolar.auxiliar.ActiveOption;
 import br.com.glassdolar.facade.Facade;
 import br.com.glassdolar.model.Founder;
 import br.com.glassdolar.model.Invester;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -18,11 +14,22 @@ public class Teste {
     public static void main(String[] args){
         Facade facade = new Facade();
         
-        Invester i = new Invester();
-        i.setActiveOption(ActiveOption.ACTIVE);
-        i.setCompanyUrl("http://codeline.com.br");
-        i.setLogoUrl("http://minhalogo.com");
-        i.setName("Thomas Turbando");
-        facade.saveInvester(i);
+        List<Invester> investers = facade.getAllInvestors();
+        List<Invester> porNome = facade.getInvestorByName("Marcelo");
+        List<Invester> porLocal = facade.getInvestorByLocal("Toronto");
+        List<Invester> porArea = facade.getInvestorByArea("AI");
+        
+        for(Invester i: investers)
+            System.out.println(i.getName());
+        System.out.println("---------------------------------------");
+        for(Invester i: porArea)
+            System.out.println(i.getName());
+        System.out.println("---------------------------------------");
+        for(Invester i: porLocal)
+            System.out.println(i.getName());
+        System.out.println("---------------------------------------");
+        for(Invester i: porNome)
+            System.out.println(i.getName());
+        System.out.println("---------------------------------------");
 }
 }
