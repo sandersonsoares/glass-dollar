@@ -7,10 +7,10 @@ package br.com.glassdolar.controller;
 
 import br.com.glassdolar.facade.Facade;
 import br.com.glassdolar.model.Invester;
+import br.com.glassdolar.model.Partner;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
@@ -27,6 +27,7 @@ public class InvestorsBean {
     private Invester invester;
     private String name, office, area;
     private Double ticket;
+    private List<Partner> partners;
     
     public InvestorsBean(){
         facade = new Facade();
@@ -36,6 +37,7 @@ public class InvestorsBean {
             Long id = Long.valueOf(idString);
             if(id!=null){
                 invester = facade.getInvesterById(id);
+                partners = invester.getPartners();
             }
         }
     }
@@ -120,5 +122,13 @@ public class InvestorsBean {
 
     public void setTicket(Double ticket) {
         this.ticket = ticket;
+    }
+
+    public List<Partner> getPartners() {
+        return partners;
+    }
+
+    public void setPartners(List<Partner> partners) {
+        this.partners = partners;
     }
 }

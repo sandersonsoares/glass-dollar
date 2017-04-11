@@ -74,23 +74,23 @@
         </div>
         <div class="row">
             <div class="container">
-                <!--<ui:repeat value="#{investorsBean.investors}" var="investor" size="4">-->
+                <ui:repeat value="#{investorsBean.partners}" var="partner" size="4">
                     <div class="col s12 m6 l3">
                         <div class="card">
                             <div class="card-image circle">
                                 <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg" alt="" class="circle" />
                             </div>
                             <div class="card-content">
-                                <h5 class="left-align title truncate">Tio Bio das Meninas</h5>
+                                <h5 class="left-align title truncate">#{partner.name}</h5>
                                 <div class="center">
                                     <h5>9.1</h5>
-                                    <p>985 reviews</p>
-                                    <div class="chip">Marketinf Network</div>
+                                    <p>#{partner.reviews} reviews</p>
+                                    <div class="chip">#{partner.tags.size()>0?partner.tags.get(0):'Marketing Network' }</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <!--</ui:repeat>-->
+                </ui:repeat>
             </div>
         </div>
 

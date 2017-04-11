@@ -22,4 +22,20 @@ public enum TagNegativeInvestment {
     private TagNegativeInvestment(String tag){
         this.tag = tag;
     }
+    
+    public String toString(){
+        switch(this){
+            case DRAG:
+                return "Drag; Along";
+            case HIGH_VAL:
+                return "High value";
+            case UNFRIENDLY_TERMS:
+                return "Unfriendly terms";
+            case REQUIRED_B_SEAT:
+                return "Required board seat";
+            case FAST_NEG:
+                return "Fast Negociation";
+        }
+        return this.tag;
+    }
 }

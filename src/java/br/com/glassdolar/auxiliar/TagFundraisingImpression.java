@@ -24,4 +24,27 @@ public enum TagFundraisingImpression {
     private TagFundraisingImpression(String tag){
         this.tag = tag;
     }
+    
+    @Override
+    public String toString(){
+        switch(this){
+            case UND_MODEL: 
+                return "Understood model";
+            case ENOUGH_TIME: 
+                return "Enough time";
+            case SMART_QUESTION:
+                return "Smart question";
+            case NEVER_HEARD_BACK:
+                return "Never heard back";
+            case FAST_DECISION:
+                return "Fast Decision";
+            case PREPARED:
+                return "Prepared";
+            case RESP_OF_FOUNDER_TIME: 
+                return "Respectfull of founder time";
+            case ONTIME:
+                return "On time";
+        }
+        return this.tag;
+    }
 }

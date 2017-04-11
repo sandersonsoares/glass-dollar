@@ -21,4 +21,21 @@ public enum TagInvestmentType {
     private TagInvestmentType(String type){
         this.tag = type;
     }
+    
+    @Override
+    public String toString(){
+        switch(this){
+            case EQUICITY:;
+                return "Equicity";
+            case CONVERTIBLE:
+                return "Convertible";
+            case DEBT: 
+                return "Debt";
+            case MAJORITY:
+                return "Majority";
+            case MINORITY:
+                return "Minority";
+        }
+        return this.tag;
+    }
 }
